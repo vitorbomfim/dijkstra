@@ -43,7 +43,7 @@ Para melhor visualização de um grafo é usada a representação como nas figur
 
 \subsection{Matriz de Adjacência}
 
-A matriz de adjacência é uma matriz booleana, quando utilizada em grafos, de tamanho n x n onde n é o número de vértices do grafo. Chamando de $A=a_{ij}$ a matriz adjacência, onde i  e j representam o número de identificação do vértice, por exemplo, para $a_{21}$ teremos nesta posição o valor correspondente a aresta que liga o vértice dois ao vértice um. A matriz é preenchida pela seguinte condição:
+A matriz de adjacência é uma matriz booleana, quando utilizada em grafos, de tamanho n x n onde n é o número de vértices do grafo. Chamando de $A=a_{ij}$ a matriz adjacência, onde i  e j representam o número de identificação do vértice, por exemplo, para $a_{21}$ teremos nesta posição o valor correspondente a aresta que liga o vértice 2 ao vértice 1. A matriz é preenchida pela seguinte condição:
 
 $a_{ij}=1$, se existe ligação entre os vértices i e j
 
@@ -99,20 +99,21 @@ Uma observação importante é que, em grafos não direcionados, a matriz de adj
 
 \section{Aplicação para o Problema do Menor Caminho}
 
-Uma das aplicações mais comuns de grafos é para a resolução do problema de menor caminho, definindo um vértice de partida e um de chegada em um grafo, determinar qual caminho apresenta o menor custo para percorrer este caminho, considerando os pesos contidos nas arestas. Devido a importância da resolução deste tipo de problema, foram desenvolvidos algoritmos capazes de retornar como resultado o menor caminho dentro de um grafo.
+Uma das aplicações mais comuns de grafos é na  resolução do problema de menor caminho. Nesse problema é definido  um vértice de partida e um de chegada para com isso determinar qual caminho apresenta o menor custo para sair do vértice de partida e chegar ao vértice de chegada considerando os pesos contidos nas arestas. Devido a importância da resolução deste tipo de problema, foram desenvolvidos algoritmos capazes de retornar como resultado o menor caminho dentro de um grafo.
 
 \subsection{Algoritmo de Dijkstra}
 
-Para utilizarmos o algoritmo de Dijkstra o primeiro passo é determinar o vértice de origem e o vértice de destino. Determinados a origem e o destino é feita uma análise através de interações vértice a vértice, buscando o menor, ou menores caminhos possíveis.
+Para utilizarmos o algoritmo de Dijkstra o primeiro passo é determinar o vértice de origem e o vértice de destino. Após determinar  a origem e o destino é feita uma análise através de iterações vértice a vértice, buscando o menor, ou menores caminhos possíveis.
 
-Partindo da origem, compara-se o custo de cada conexão ligada ao vértice do momento, para a primeira interação este vértice será a origem. Segue-se então para o próximo vértice, que apresentar o menor custo e o vértice antecessor é marcado. No novo vértice do momento é somado os custos para a chegada até ele e busca-se as conexões do vértice do momento com vértices não marcados, seguindo para o que apresente menor custo. Essa interação se repete até chegar no vértice de destino.
+Partindo da origem, compara-se o custo de cada conexão ligada ao vértice do momento. Para a primeira iteração este vértice será a origem. Segue-se então para o próximo vértice que apresentar o menor custo e o vértice antecessor é marcado. No novo vértice do momento é somado os custos para a chegada até ele e busca-se as conexões do vértice do momento com vértices não marcados, seguindo para o que apresente menor custo. Essa iteração se repete até chegar no vértice de destino.
 
 É importante salientar que este algoritmo não aceita custos (pesos) negativos.
+
 
 \subsection{Algoritmo de Floyd- Warshall}
 
 Este algoritmo é matricial e aceita custos negativos, mas a presença de ciclos negativos, ou seja, presença de mais de um valor negativo em uma malha de arestas, exige cuidado e conferência, já que o resultado pode não condizer com o real.
 	
-O algoritmo calcula todos os menores custos de todas as origens para todos os destinos, através de um número de interações finito e igual ao número de vértices do grafo. O algoritmo é inicializado com uma matriz onde os elementos são apenas as distâncias diretas entre os vértices, a diagonal principal, ou seja a distância entre os vértices e eles mesmos é zero e os vértices que não tem ligação direta, o elemento da matriz será infinito.
+O algoritmo calcula todos os menores custos de todas as origens para todos os destinos, através de um número de iterações finito e igual ao número de vértices do grafo. O algoritmo é inicializado com uma matriz onde os elementos são apenas as distâncias diretas entre os vértices, a diagonal principal, ou seja a distância entre os vértices e eles mesmos é zero e os vértices que não tem ligação direta, o elemento da matriz será infinito.
 
-Após a montagem da matriz inicial, cada interação busca as menores distâncias entre os pontos, passando pelo vértice de número igual ao número da interação. Por exemplo, a terceira interação busca as menores distâncias entre os vértices, passando pelo vértice de número 3. Em cada interação, caso a distância seja menor do que a que já obtemos na matriz, o valor menor substitui o atual. Ao final das interações temos todas as menores distâncias entre os vértices.
+Após a montagem da matriz inicial, cada iteração busca as menores distâncias entre os pontos, passando pelo vértice de número igual ao número da iteração. Por exemplo, a terceira iteração busca as menores distâncias entre os vértices, passando pelo vértice de número 3. Em cada iteração, caso a distância seja menor do que a que já obtemos na matriz, o valor menor substitui o atual. Ao final das iterações temos todas as menores distâncias entre os vértices.
