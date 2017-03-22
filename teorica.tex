@@ -1,0 +1,118 @@
+\chapter{Fundamentação Teórica}
+
+\section{Grafos}
+
+O conceito de grafo é um conceito simples, porém muito amplo, que trata da relação de conexão entre elementos nos mais diversos problemas matemáticos. Podemos então definir grafo como a união de um conjunto de vértices e um conjunto de arestas. Geralmente os grafos tem a seguinte notação:
+
+\begin{equation}
+G = (V,A)
+\end{equation}
+
+Onde V representa o conjunto de vértices e A representa o conjunto de arestas.
+
+\subsection{Vértices e Arestas }
+
+Os vértices, também chamados de nós, são os elementos de um conjunto.   O número de elementos deste conjunto representa a ordem da estrutura. O conjunto de arestas representa as ligações entre os elementos do conjunto de vértices.
+
+A depender do problema a ser estudado, estes elementos assumem significados diferentes. Os vértices podem significar pessoas, localizações geográficas, hosts, entre outros. Já as arestas representam então as relações entre esses elementos, desde distâncias físicas entre cidades, até relações de amizade ou afetividade entre pessoas.
+
+\subsection{Antecessor, Sucessor e Vizinho}
+
+Vértices vizinhos são aqueles que são ligados por uma aresta ou arco. Quando este vértice está na extremidade inicial da aresta ele é chamado de antecessor, quando está na extremidade final, é chamado de vértice sucessor.
+
+\subsection{Grafos Orientados ou Não Orientados}
+
+Em um grafo não orientado, a ligação entre dois vértices é feita através de uma linha, chamada de aresta. Já em um grafo orientado, a ligação é feita através de uma seta, chamada de arco, e esta representa o sentido correspondente desta ligação.
+
+\begin{figure}[h!]
+	\centering
+	\includegraphics[scale=0.5]{img1.jpeg}
+	\caption{Grafo Orientado}
+	\label{img1}
+\end{figure}
+\begin{figure}[h!]
+	\centering
+	\includegraphics[scale=0.5]{img2.jpeg}
+	\caption{Grafo Não Orientado}
+	\label{img2}
+\end{figure}
+
+\section{Representação de um grafo}
+
+Para melhor visualização de um grafo é usada a representação como nas figuras \ref{img1} e \ref{img2}, com a identificação dos vértices entre círculos e as arestas ou arcos como linhas, porém para fins de cálculo os grafos são associados a matrizes. As matriz mais comumente utilizada é a matriz de adjacência, apesar de não ser a mais econômica computacionalmente.
+
+\subsection{Matriz de Adjacência}
+
+A matriz de adjacência é uma matriz booleana, quando utilizada em grafos, de tamanho n x n onde n é o número de vértices do grafo. Chamando de $A=a_{ij}$ a matriz adjacência, onde i  e j representam o número de identificação do vértice, por exemplo, para $a_{21}$ teremos nesta posição o valor correspondente a aresta que liga o vértice dois ao vértice um. A matriz é preenchida pela seguinte condição:
+
+$a_{ij}=1$, se existe ligação entre os vértices i e j
+
+$a_{ij}=0$, se não existe ligação entre os vértices i e j
+
+Exemplo:
+
+\begin{figure}[h!]
+	\centering
+	\includegraphics[scale=0.5]{img3.jpeg}
+	\caption{Grafo Sem Peso}
+	\label{img3}
+\end{figure}
+
+\begin{table}[h!]
+	\centering
+	\label{my-label}
+	\begin{tabular}{ccccc}
+		& A & B & C                      & D                      \\
+		\multicolumn{1}{c|}{A} & 0 & 1 & \multicolumn{1}{c}{1} & \multicolumn{1}{c|}{1} \\
+		\multicolumn{1}{c|}{B} & 1 & 0 & \multicolumn{1}{c}{0} & \multicolumn{1}{c|}{0} \\
+		\multicolumn{1}{c|}{C} & 1 & 0 & \multicolumn{1}{c}{0} & \multicolumn{1}{c|}{1} \\
+		\multicolumn{1}{c|}{D} & 1 & 0 & \multicolumn{1}{c}{1} & \multicolumn{1}{c|}{0}
+	\end{tabular}
+	\caption{Matriz Adjacência sem Peso}
+\end{table}
+\FloatBarrier
+Caso as arestas contenham peso, a matriz de adjacência deve ser preenchida com o peso correspondente e onde não houver conexão entre os vértices, preencher com um valor que não possa ser considerado peso, como zero ou infinito.
+
+Exemplo:
+
+\begin{figure}[h!]
+	\centering
+	\includegraphics[scale=0.5]{img4.jpeg}
+	\caption{Grafo Com Peso}
+	\label{img4}
+\end{figure}
+
+\begin{table}[h!]
+	\centering
+	\label{my-label}
+	\begin{tabular}{ccccc}
+		& A & B & C                      & D                      \\
+		\multicolumn{1}{c|}{A} & 0 & 4 & \multicolumn{1}{c}{6} & \multicolumn{1}{c|}{3} \\
+		\multicolumn{1}{c|}{B} & 4 & 0 & \multicolumn{1}{c}{0} & \multicolumn{1}{c|}{0} \\
+		\multicolumn{1}{c|}{C} & 6 & 0 & \multicolumn{1}{c}{0} & \multicolumn{1}{c|}{2} \\
+		\multicolumn{1}{c|}{D} & 3 & 0 & \multicolumn{1}{c}{2} & \multicolumn{1}{c|}{0}
+	\end{tabular}
+	\caption{Matriz Adjacência com Peso}
+\end{table}
+\FloatBarrier
+Uma observação importante é que, em grafos não direcionados, a matriz de adjacência é simétrica em relação a diagonal principal.
+
+\section{Aplicação para o Problema do Menor Caminho}
+
+Uma das aplicações mais comuns de grafos é para a resolução do problema de menor caminho, definindo um vértice de partida e um de chegada em um grafo, determinar qual caminho apresenta o menor custo para percorrer este caminho, considerando os pesos contidos nas arestas. Devido a importância da resolução deste tipo de problema, foram desenvolvidos algoritmos capazes de retornar como resultado o menor caminho dentro de um grafo.
+
+\subsection{Algoritmo de Dijkstra}
+
+Para utilizarmos o algoritmo de Dijkstra o primeiro passo é determinar o vértice de origem e o vértice de destino. Determinados a origem e o destino é feita uma análise através de interações vértice a vértice, buscando o menor, ou menores caminhos possíveis.
+
+Partindo da origem, compara-se o custo de cada conexão ligada ao vértice do momento, para a primeira interação este vértice será a origem. Segue-se então para o próximo vértice, que apresentar o menor custo e o vértice antecessor é marcado. No novo vértice do momento é somado os custos para a chegada até ele e busca-se as conexões do vértice do momento com vértices não marcados, seguindo para o que apresente menor custo. Essa interação se repete até chegar no vértice de destino.
+
+É importante salientar que este algoritmo não aceita custos (pesos) negativos.
+
+\subsection{Algoritmo de Floyd- Warshall}
+
+Este algoritmo é matricial e aceita custos negativos, mas a presença de ciclos negativos, ou seja, presença de mais de um valor negativo em uma malha de arestas, exige cuidado e conferência, já que o resultado pode não condizer com o real.
+	
+O algoritmo calcula todos os menores custos de todas as origens para todos os destinos, através de um número de interações finito e igual ao número de vértices do grafo. O algoritmo é inicializado com uma matriz onde os elementos são apenas as distâncias diretas entre os vértices, a diagonal principal, ou seja a distância entre os vértices e eles mesmos é zero e os vértices que não tem ligação direta, o elemento da matriz será infinito.
+
+Após a montagem da matriz inicial, cada interação busca as menores distâncias entre os pontos, passando pelo vértice de número igual ao número da interação. Por exemplo, a terceira interação busca as menores distâncias entre os vértices, passando pelo vértice de número 3. Em cada interação, caso a distância seja menor do que a que já obtemos na matriz, o valor menor substitui o atual. Ao final das interações temos todas as menores distâncias entre os vértices.
