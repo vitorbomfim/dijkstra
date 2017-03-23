@@ -1,18 +1,14 @@
 \chapter{Revisão Bibliográfica}
-
+	 
 \section{Dijkstra}
-
-	Em \cite{algo} é apresentado o algoritmo de dijkistra, sendo este utilizado para obter o menor caminho de um vértice de origem até cada um dos outros vértices do  grafo, onde G é um grafo simples, caso este não seja simples, é necessário torná-lo. O artigo ressalta que ao contrário do algorítimo Bellman-Ford, Bellman-Ford impõe restrições sobre o sinal do peso das arestas, criando uma solução menor, dependente dos vértices de início e final.
-	
-	Ainda em \cite{algo} é resolvido um pequeno exemplo com o algoritmo de dijkistra que envolve distância entre cidades, mostrando o menor caminho entre elas. Esse exemplo foi feito passo a passo, explicando minunciosamente como funciona esse algoritmo. Também ressalta que este só pode ser utilizado em grafos ponderados e unicamente com pesos positivos, calculando a distância entre uma cidade e todas as outras, diferentemente do Algoritmo de Floyd que calcula a distância entre todas as cidades.
-	
-	Em \cite{barros2007algoritmo} há a apresentação do Algoritmo de dijkistra e a explicação do algoritmo passo a passo, feita de forma diferente do \cite{algo} pois este é feito de forma mais mecânica, com um exemplo mecânico. Apenas com uma tabela e como o algoritmo funciona e seus passos. 
-	
-	Em \cite{barros2007algoritmo} também é dita algumas aplicações, indo de uma cadeia de produção, até o clássico problema do carteiro que não pode passar duas vezes na mesma rua. Qualquer grafo simples que possua a matriz de pesos definida pode ser submetida à proposta de dijkistra.
-	
-\section{Bellman-Ford}	
-	Em \cite{ford} é apresentado o algorítimo de Bellman-Ford, sendo este utilizado para obter o menor caminho de um nodo de origem até cada um dos outros nodos de  G, onde G é um dígrafo(grafo orientado) com arestas ponderadas. O artigo ressalta que ao contrário do algorítimo Dijkstra, Bellman-Ford não impõe restrições sobre o sinal do peso das arestas, criando uma solução mais genérica.
-
-	Ainda em \cite{ford}, algumas das principais aplicações são mostradas, Protocolos de Roteamento Vetor-Distância e Problema "Triangular Arbitrage", útil para problemas da área de economia e investimento.
-
-	Mesmo com estruturas similares,algumas diferenças são vistas entre Dijkstra e Ford em \cite{barros2007algoritmo} e \cite{ford}, enquanto o primeiro busca exaustivamente o nodo com menor peso ainda não computado,o último usa o procedimento de relaxamento V - 1 vezes, onde V representa a quantidade de vértices em G.
+	 
+ Em \cite{de2008algoritmo} é apresentado o algoritmo de dijkstra (E.W. Dijkstra), sendo este utilizado para obter o caminho de custo mínimo entre os vértices de um grafo. Escolhido um vértice como origem, este algoritmo calcula a distância mínima para todos os demais vértices do grafo.   
+ Ainda em \cite{de2008algoritmo} é resolvido um pequeno exemplo com o algoritmo de dijkistra que envolve distância entre cidades, mostrando o menor caminho entre elas. Esse exemplo foi feito passo a passo, explicando minunciosamente como funciona esse algoritmo. Também ressalta que este só pode ser utilizado em grafos ponderados e unicamente com pesos positivos, calculando a distância entre uma cidade e todas as outras, diferentemente do Algoritmo de Floyd que calcula a distância entre todas as cidades.   
+Em \cite{barros2007algoritmo} há a apresentação do Algoritmo de dijkistra e a explicação do algoritmo passo a passo, feita de forma diferente do \cite{algo} pois este é feito de forma mais mecânica, com um exemplo mecânico. Apenas com uma tabela e como o algoritmo funciona e seus passos.
+	   
+Em \cite{barros2007algoritmo} também é dita algumas aplicações, indo de uma cadeia de produção, até o clássico problema do carteiro que não pode passar duas vezes na mesma rua. Qualquer grafo simples que possua a matriz de pesos definida pode ser submetida à proposta de dijkistra.
+	   
+\section{Floyd-Warshall} 
+ Em \cite{hougard2010floyd} é apresentado o algorítimo de Floyd-Warshall, sendo este utilizado para obter o menor caminho de um vértice de origem até cada um dos outros vértices de  G, onde G é um grafo direcionado com arestas ponderadas. O artigo ressalta que apesar de possuir um tempo de processamento elevado, superior a muitos outros algoritmos, o algoritmo de Floyd-Warshall possui uma estrutura de complexidade muito menor.
+ Ainda em \cite{hougard2010floyd}, é apontado que o algoritmo funciona normalmente se não existir ciclos negativos no grafo analisado, entretando será detectada a existência destes ciclos. 
+ Algumas diferenças são vistas entre Dijkstra e Floyd-Warshall em \cite{barros2007algoritmo} e \cite{hougard2010floyd}, enquanto o primeiro pode ser usado apenas para grafos com pesos positivos, o segundo pode ser usado em grafos com pesos negativos. Pode-se observar também que o algoritmo de dijkstra leva um tempo de processamento muito menor por não computar todos os caminhos possíveis, diferentemente do de Floyd. 
