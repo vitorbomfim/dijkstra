@@ -1,20 +1,20 @@
 \documentclass[
-	% -- opções da classe memoir --
-	12pt,				% tamanho da fonte
-	openright,			% capítulos começam em pág ímpar (insere página vazia caso preciso)
-	oneside,			% para impressão em recto e verso. Oposto a oneside
-	a4paper,			% tamanho do papel. 
-	% -- opções da classe abntex2 --
-	%chapter=TITLE,		% títulos de capítulos convertidos em letras maiúsculas
-	%section=TITLE,		% títulos de seções convertidos em letras maiúsculas
-	%subsection=TITLE,	% títulos de subseções convertidos em letras maiúsculas
-	%subsubsection=TITLE,% títulos de subsubseções convertidos em letras maiúsculas
-	% -- opções do pacote babel --
-	english,			% idioma adicional para hifenização
-	french,				% idioma adicional para hifenização
-	spanish,			% idioma adicional para hifenização
-	brazil,				% o último idioma é o principal do documento
-	]{abntex2}
+% -- opções da classe memoir --
+12pt,				% tamanho da fonte
+openright,			% capítulos começam em pág ímpar (insere página vazia caso preciso)
+oneside,			% para impressão em recto e verso. Oposto a oneside
+a4paper,			% tamanho do papel. 
+% -- opções da classe abntex2 --
+%chapter=TITLE,		% títulos de capítulos convertidos em letras maiúsculas
+%section=TITLE,		% títulos de seções convertidos em letras maiúsculas
+%subsection=TITLE,	% títulos de subseções convertidos em letras maiúsculas
+%subsubsection=TITLE,% títulos de subsubseções convertidos em letras maiúsculas
+% -- opções do pacote babel --
+english,			% idioma adicional para hifenização
+french,				% idioma adicional para hifenização
+spanish,			% idioma adicional para hifenização
+brazil,				% o último idioma é o principal do documento
+]{abntex2}
 
 
 % ---
@@ -40,7 +40,7 @@
 \usepackage{multicol}
 \usepackage{multirow}
 % ---
-	
+
 % ---
 % Pacotes adicionais, usados apenas no âmbito do Modelo Canônico do abnteX2
 % ---
@@ -66,11 +66,11 @@
 % Define os textos da citação
 \renewcommand*{\backrefalt}[4]{
 	\ifcase #1 %
-		Nenhuma citação no texto.%
+	Nenhuma citação no texto.%
 	\or
-		Citado na página #2.%
+	Citado na página #2.%
 	\else
-		Citado #1 vezes nas páginas #2.%
+	Citado #1 vezes nas páginas #2.%
 	\fi}%
 % ---
 %redefine a capa
@@ -99,11 +99,11 @@
 \local{São Cristóvão,SE}
 \data{\today}
 \instituicao{%
-  Universidade Federal De Sergipe
-  \par
-  Faculdade de Engenharia Eletrônica
-  \par
-  Redes e Comunicações}
+	Universidade Federal De Sergipe
+	\par
+	Faculdade de Engenharia Eletrônica
+	\par
+	Redes e Comunicações}
 \tipotrabalho{Relatório técnico}
 % O preambulo deve conter o tipo do trabalho, o objetivo, 
 % o nome da instituição e a área de concentração 
@@ -119,18 +119,18 @@
 % informações do PDF
 \makeatletter
 \hypersetup{
-     	%pagebackref=true,
-		pdftitle={\@title}, 
-		pdfauthor={\@author},
-    	pdfsubject={\imprimirpreambulo},
-	    pdfcreator={LaTeX with abnTeX2},
-		pdfkeywords={abnt}{latex}{abntex}{abntex2}{relatório técnico}, 
-		colorlinks=true,       		% false: boxed links; true: colored links
-    	linkcolor=blue,          	% color of internal links
-    	citecolor=blue,        		% color of links to bibliography
-    	filecolor=magenta,      		% color of file links
-		urlcolor=blue,
-		bookmarksdepth=4
+	%pagebackref=true,
+	pdftitle={\@title}, 
+	pdfauthor={\@author},
+	pdfsubject={\imprimirpreambulo},
+	pdfcreator={LaTeX with abnTeX2},
+	pdfkeywords={abnt}{latex}{abntex}{abntex2}{relatório técnico}, 
+	colorlinks=true,       		% false: boxed links; true: colored links
+	linkcolor=blue,          	% color of internal links
+	citecolor=blue,        		% color of links to bibliography
+	filecolor=magenta,      		% color of file links
+	urlcolor=blue,
+	bookmarksdepth=4
 }
 \makeatother
 % --- 
@@ -155,111 +155,102 @@
 % Início do documento
 % ----
 \begin{document}
-
-% Seleciona o idioma do documento (conforme pacotes do babel)
-%\selectlanguage{english}
-\selectlanguage{brazil}
-
-% Retira espaço extra obsoleto entre as frases.
-\frenchspacing 
-
-% ----------------------------------------------------------
-% ELEMENTOS PRÉ-TEXTUAIS
-% ----------------------------------------------------------
-
-% ---
-% Capa
-% ---
-\imprimircapa
-% ---
-
-% ---
-% Folha de rosto
-% (o * indica que haverá a ficha bibliográfica)
-% ---
-\imprimirfolhaderosto*
-% ---
-
-% ---
-% Agradecimentos
-% ---
-
-% ---
-
-% RESUMO
-% resumo na língua vernácula (obrigatório)
-\setlength{\absparsep}{18pt} % ajusta o espaçamento dos parágrafos do resumo
-\begin{resumo}
-	A busca por uma maior economia e menores custos nas diversas áreas das ações humanas foi um grande ponto de partida para o surgimento da Teoria dos Grafos com o consequente Problema dos Menores Caminhos. Para a resolução desse Problema dos Menores Caminhos surgiram vários tipos de algoritmos, como por exemplo o Algoritmo de Dijkstra e Algoritmo de Floyd-Warshall. Nesse trabalho será feito uma explicação sobre o que são os grafos e sobre os algoritmos utilizados nesse projeto. Após isso, esses algoritmos serão implementados no software computacional MATLAB para ser possível a comparação entre as características obtidas dos dois algoritmos. Com essa comparação será possível dizer qual dos algoritmos é mais eficiente com relação ao número de iterações e tempo de processamento e sob quais condições isso acontece.
 	
-	\noindent
-	\textbf{Palavras-chaves}: Grafos, Problema dos Menores Caminhos, Floyd-Warshall, Dijkstra, Iterações
-\end{resumo}
-% ---
-
-%lista de ilustrações
-% ---
-\pdfbookmark[0]{\listfigurename}{lof}
-\listoffigures*
-\pagebreak
-% ---
-
-%lista de tabelas
-\pdfbookmark[0]{\listtablename}{lot}
-\listoftables*
-\pagebreak
-% ---
-
-%lista de abreviaturas e siglas
-
-
-%lista de símbolos
-\begin{simbolos}
-	\item[$ \Gamma $] Letra grega Gama
-	\item[$ \Lambda $] Lambda
-	\item[$ \zeta $] Letra grega minúscula zeta
-	\item[$ \in $] Pertence
-\end{simbolos}
-% ---
-
-% sumario
-\pdfbookmark[0]{\contentsname}{toc}
-\tableofcontents*
-\pagebreak
-% ---
-
-%introdução
-\include{Intro}
-
-
+	% Seleciona o idioma do documento (conforme pacotes do babel)
+	%\selectlanguage{english}
+	\selectlanguage{brazil}
 	
-\phantompart
-%-
-
-%Revisão Bibliografica
-\include{Referência}
-\phantompart
-%-
-\chapter{Objetivos}
-O principal objetivo desse trabalho foi implementar os algoritmos de Dijkstra e de Floyd-Warshall para ser possível uma comparação do desempenho dos mesmos.
-\include{teorica}
-\phantompart
-\chapter{Formulação do problema}
-\phantompart
-\chapter{Resultados Obtidos}
-\phantompart
-\chapter{Conclusão}
-\phantompart
-
-\cite{algo}
-\cite{cardoso2005teoria}
-\cite{coelho2013teoria}
-\cite{costa2011teoria}
-\cite{costalonga2012grafos}
-\cite{deteoria}
-\cite{feofiloff2011introduccao}
-
-
-\bibliography{biblio}
-%\bibliographystyle{ieeetr}
+	% Retira espaço extra obsoleto entre as frases.
+	\frenchspacing 
+	
+	% ----------------------------------------------------------
+	% ELEMENTOS PRÉ-TEXTUAIS
+	% ----------------------------------------------------------
+	
+	% ---
+	% Capa
+	% ---
+	\imprimircapa
+	% ---
+	
+	% ---
+	% Folha de rosto
+	% (o * indica que haverá a ficha bibliográfica)
+	% ---
+	\imprimirfolhaderosto*
+	% ---
+	
+	% ---
+	% Agradecimentos
+	% ---
+	
+	% ---
+	
+	% RESUMO
+	% resumo na língua vernácula (obrigatório)
+	\setlength{\absparsep}{18pt} % ajusta o espaçamento dos parágrafos do resumo
+	\begin{resumo}
+		A busca por uma maior economia e menores custos nas diversas áreas das ações humanas foi um grande ponto de partida para o surgimento da Teoria dos Grafos com o consequente Problema dos Menores Caminhos. Para a resolução desse Problema dos Menores Caminhos surgiram vários tipos de algoritmos, como por exemplo o Algoritmo de Dijkstra e Algoritmo de Floyd-Warshall. Nesse trabalho será feito uma explicação sobre o que são os grafos e sobre os algoritmos utilizados nesse projeto. Após isso, esses algoritmos serão implementados no software computacional MATLAB para ser possível a comparação entre as características obtidas dos dois algoritmos. Com essa comparação será possível dizer qual dos algoritmos é mais eficiente com relação ao número de iterações e tempo de processamento e sob quais condições isso acontece.
+		
+		\noindent
+		\textbf{Palavras-chaves}: Grafos, Problema dos Menores Caminhos, Floyd-Warshall, Dijkstra, Iterações
+	\end{resumo}
+	% ---
+	
+	%lista de ilustrações
+	% ---
+	\pdfbookmark[0]{\listfigurename}{lof}
+	\listoffigures*
+	\pagebreak
+	% ---
+	
+	%lista de tabelas
+	\pdfbookmark[0]{\listtablename}{lot}
+	\listoftables*
+	\pagebreak
+	% ---
+	
+	%lista de abreviaturas e siglas
+	
+	
+	% sumario
+	\pdfbookmark[0]{\contentsname}{toc}
+	\tableofcontents*
+	\pagebreak
+	% ---
+	
+	%introdução
+	\include{Intro}
+	
+	
+	
+	\phantompart
+	%-
+	
+	%Revisão Bibliografica
+	\include{Referência}
+	\phantompart
+	%-
+	\chapter{Objetivos}
+	O principal objetivo desse trabalho foi implementar os algoritmos de Dijkstra e de Floyd-Warshall para ser possível uma comparação do desempenho dos mesmos.
+	\include{teorica}
+	\phantompart
+	\chapter{Formulação do problema}
+	\phantompart
+	\chapter{Resultados Obtidos}
+	\phantompart
+	\chapter{Conclusão}
+	\phantompart
+	
+	\cite{algo}
+	\cite{cardoso2005teoria}
+	\cite{coelho2013teoria}
+	\cite{costa2011teoria}
+	\cite{costalonga2012grafos}
+	\cite{deteoria}
+	\cite{feofiloff2011introduccao}
+	
+	
+	\bibliography{biblio}
+	%\bibliographystyle{ieeetr}
 \end{document}
