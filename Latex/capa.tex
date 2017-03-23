@@ -94,7 +94,7 @@
 % ---
 % Informações de dados para CAPA e FOLHA DE ROSTO
 % ---
-\titulo{Grafos \& Garfos}
+\titulo{Aplicação dos Algoritmos de Dijkstra e de Floyd-Warshall no software MATLAB}
 \autor{Iuri rodrigo ferreira Alves da silva\\Gregory Medeiros Melgaço Pereira\\Raul Rodrigo Silva de Andrade \\ Rafael Castro Nunes \\ Ruan Robert Bispo dos Santos \\ Vítor do Bomfim Almeida Carvalho}
 \local{São Cristóvão,SE}
 \data{\today}
@@ -107,7 +107,7 @@
 \tipotrabalho{Relatório técnico}
 % O preambulo deve conter o tipo do trabalho, o objetivo, 
 % o nome da instituição e a área de concentração 
-\preambulo{Relatório em conformidade com as normas ABNT(pra falar a vdd n sei oq escrever aqui)}
+\preambulo{Relatório em conformidade com as normas ABNT}
 % ---
 
 % ---
@@ -183,25 +183,17 @@
 % ---
 % Agradecimentos
 % ---
-\begin{agradecimentos}
-	
-	O agradecimento principal é direcionado a Ruan, por ter feito o trabalho todo.
-	
-	Agradecimento especial ao querido professor felix, por sabotar a prova de redes.
-	
-	a vida é bonita é bonita
-	
-\end{agradecimentos}
+
 % ---
 
 % RESUMO
 % resumo na língua vernácula (obrigatório)
 \setlength{\absparsep}{18pt} % ajusta o espaçamento dos parágrafos do resumo
 \begin{resumo}
-	Colocar aqui um resumo bem legal aqui.
+	A busca por uma maior economia e menores custos nas diversas áreas das ações humanas foi um grande ponto de partida para o surgimento da Teoria dos Grafos com o consequente Problema dos Menores Caminhos. Para a resolução desse Problema dos Menores Caminhos surgiram vários tipos de algoritmos, como por exemplo o Algoritmo de Dijkstra e Algoritmo de Floyd-Warshall. Nesse trabalho será feito uma explicação sobre o que são os grafos e sobre os algoritmos utilizados nesse projeto. Após isso, esses algoritmos serão implementados no software computacional MATLAB para ser possível a comparação entre as características obtidas dos dois algoritmos. Com essa comparação será possível dizer qual dos algoritmos é mais eficiente com relação ao número de iterações e tempo de processamento e sob quais condições isso acontece.
 	
 	\noindent
-	\textbf{Palavras-chaves}: Grafos. Dijkstra.
+	\textbf{Palavras-chaves}: Grafos, Problema dos Menores Caminhos, Floyd-Warshall, Dijkstra, Iterações
 \end{resumo}
 % ---
 
@@ -219,11 +211,7 @@
 % ---
 
 %lista de abreviaturas e siglas
-\begin{siglas}
-	\item[Rn] Ruan
-	\item[Ru] Raul
-\end{siglas}
-% ---
+
 
 %lista de símbolos
 \begin{simbolos}
@@ -253,6 +241,7 @@
 \phantompart
 %-
 \chapter{Objetivos}
+O principal objetivo desse trabalho foi implementar os algoritmos de Dijkstra e de Floyd-Warshall para ser possível uma comparação do desempenho dos mesmos.
 \include{teorica}
 \phantompart
 \chapter{Formulação do problema}
